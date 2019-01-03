@@ -1,0 +1,13 @@
+/venv
+/build
+/dist
+
+.idea
+.DS_Store
+__pycache__
+
+*.pyc
+*.zip
+*.pypirc
+*.sqlite3
+*.egg-info
