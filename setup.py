@@ -28,7 +28,7 @@ def requirements():
 
 setup(
 	name='senlerpy',
-	version='1.3',
+	version='2.2',
 	long_description=long_description(),
 	long_description_content_type='text/markdown',
 	description='Wrapper for senler.ru API',
@@ -46,8 +46,6 @@ setup(
 		'Environment :: Console',
 		'Development Status :: 3 - Alpha',
 		'Programming Language :: Python',
-		'Programming Language :: Python :: 3.5',
-		'Programming Language :: Python :: 3.6',
 		'Programming Language :: Python :: 3.7',
 		'Programming Language :: Python :: Implementation :: PyPy',
 	]

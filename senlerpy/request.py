@@ -29,7 +29,7 @@ class RequestApi:
 		data['hash'] = self._calculate_hash(data)
 		url = self.__base_url + str(method_name)
 		try:
-			result = self.__session.post(url, data, timeout=60)
+			result = self.__session.post(url, data, timeout=300)
 		except (ConnectionError, TimeoutError, requests.exceptions.ReadTimeout):
 			raise HttpError('Error with connection to senler.ru API server')
 		if result.status_code == 404:
