@@ -1,13 +1,21 @@
+# folders
 /venv
 /build
 /dist
 
-.idea
-.DS_Store
+# folders everywhere
 __pycache__
+.idea
 
+# files
+.DS_Store
+Icon?
+
+# extensions
 *.pyc
+*.pyd
+*.pyo
+*.log
 *.zip
 *.pypirc
-*.sqlite3
 *.egg-info

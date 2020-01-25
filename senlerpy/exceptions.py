@@ -42,4 +42,3 @@ class TooManyRequests(ApiError):
 	def __str__(self):
 		return '[{}]: {}'.format(
 			self.error['error_code'], self.error['error_msg'])
-

@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
+import json
+import logging
 from .request import RequestApi
-from .exceptions import ApiError, WrongId
+from .exceptions import ApiError, WrongId, HttpError
+
+logger = logging.getLogger(__name__)
 
 
 class Senler:
@@ -19,8 +23,14 @@ class Senler:
 			if self.vk_group is None:
 				raise WrongId('vk_group_id is not specified by any of the methods')
 			kwargs['vk_group_id'] = self.vk_group
-		response = self._rq.send(str(method), kwargs).json()
-		return self.__error_handler(response)
+		response = self._rq.send(str(method), kwargs)
+		json_response = {}
+		try:
+			json_response = json.loads(response.text)
+		except:
+			logger.debug(f'{response.status_code}:{response.text}')
+			raise HttpError(f'status_code:{response.status_code}, error with decode json')
+		return self.__error_handler(json_response)
 
 	@property
 	def secret(self):

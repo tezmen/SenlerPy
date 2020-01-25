@@ -28,7 +28,7 @@ def requirements():
 
 setup(
 	name='senlerpy',
-	version='2.2',
+	version='2.2.1',
 	long_description=long_description(),
 	long_description_content_type='text/markdown',
 	description='Wrapper for senler.ru API',
