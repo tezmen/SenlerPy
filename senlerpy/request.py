@@ -30,6 +30,7 @@ class RequestApi:
 		url = self.__base_url + str(method_name)
 		try:
 			result = self.__session.post(url, data, timeout=300)
+			result.encoding = 'utf8'
 		except (ConnectionError, TimeoutError, requests.exceptions.ReadTimeout):
 			raise HttpError('Error with connection to senler.ru API server')
 		if result.status_code == 404:
